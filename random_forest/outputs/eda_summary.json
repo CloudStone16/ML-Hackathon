@@ -1,0 +1,137 @@
+[
+  {
+    "trip_id": "00000001",
+    "num_gps_points": 1315,
+    "num_nodes": 88809,
+    "num_arcs": 165790,
+    "route_len": 525,
+    "nominal_1hz_pct": 98.1,
+    "duration_sec": 1357.0
+  },
+  {
+    "trip_id": "00000002",
+    "num_gps_points": 7243,
+    "num_nodes": 7936,
+    "num_arcs": 16139,
+    "route_len": 262,
+    "nominal_1hz_pct": 97.6,
+    "duration_sec": 8933.16
+  },
+  {
+    "trip_id": "00000003",
+    "num_gps_points": 821,
+    "num_nodes": 9138,
+    "num_arcs": 18028,
+    "route_len": 79,
+    "nominal_1hz_pct": 99.63,
+    "duration_sec": 823.0
+  },
+  {
+    "trip_id": "00000004",
+    "num_gps_points": 1064,
+    "num_nodes": 7350,
+    "num_arcs": 15499,
+    "route_len": 320,
+    "nominal_1hz_pct": 53.81,
+    "duration_sec": 5217.0
+  },
+  {
+    "trip_id": "00000005",
+    "num_gps_points": 1045,
+    "num_nodes": 898,
+    "num_arcs": 1579,
+    "route_len": 105,
+    "nominal_1hz_pct": 100.0,
+    "duration_sec": 1044.0
+  },
+  {
+    "trip_id": "00000006",
+    "num_gps_points": 1450,
+    "num_nodes": 3259,
+    "num_arcs": 6757,
+    "route_len": 261,
+    "nominal_1hz_pct": 99.17,
+    "duration_sec": 2102.0
+  },
+  {
+    "trip_id": "00000008",
+    "num_gps_points": 3093,
+    "num_nodes": 4995,
+    "num_arcs": 10421,
+    "route_len": 173,
+    "nominal_1hz_pct": 99.97,
+    "duration_sec": 3093.0
+  },
+  {
+    "trip_id": "00000010",
+    "num_gps_points": 2711,
+    "num_nodes": 8502,
+    "num_arcs": 15715,
+    "route_len": 210,
+    "nominal_1hz_pct": 100.0,
+    "duration_sec": 2710.0
+  },
+  {
+    "trip_id": "00000011",
+    "num_gps_points": 2828,
+    "num_nodes": 2649,
+    "num_arcs": 5393,
+    "route_len": 565,
+    "nominal_1hz_pct": 99.96,
+    "duration_sec": 3735.0
+  },
+  {
+    "trip_id": "00000012",
+    "num_gps_points": 1608,
+    "num_nodes": 16376,
+    "num_arcs": 38599,
+    "route_len": 205,
+    "nominal_1hz_pct": 99.94,
+    "duration_sec": 1608.0
+  },
+  {
+    "trip_id": "00000013",
+    "num_gps_points": 2580,
+    "num_nodes": 155003,
+    "num_arcs": 307392,
+    "route_len": 788,
+    "nominal_1hz_pct": 96.39,
+    "duration_sec": 2832.0
+  },
+  {
+    "trip_id": "00000014",
+    "num_gps_points": 448,
+    "num_nodes": 4067,
+    "num_arcs": 8288,
+    "route_len": 164,
+    "nominal_1hz_pct": 82.33,
+    "duration_sec": 718.0
+  },
+  {
+    "trip_id": "00000016",
+    "num_gps_points": 1305,
+    "num_nodes": 8205,
+    "num_arcs": 15098,
+    "route_len": 204,
+    "nominal_1hz_pct": 100.0,
+    "duration_sec": 1304.0
+  },
+  {
+    "trip_id": "00000018",
+    "num_gps_points": 379,
+    "num_nodes": 5980,
+    "num_arcs": 11545,
+    "route_len": 166,
+    "nominal_1hz_pct": 89.95,
+    "duration_sec": 451.0
+  },
+  {
+    "trip_id": "00000019",
+    "num_gps_points": 2354,
+    "num_nodes": 52694,
+    "num_arcs": 108517,
+    "route_len": 545,
+    "nominal_1hz_pct": 100.0,
+    "duration_sec": 2353.0
+  }
+]
