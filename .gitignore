@@ -7,3 +7,6 @@ __pycache__/
 .venv/
 _teammate_repo/
 *.pdf
+
+# Evaluator data holds the hidden answers: never commit
+server_data/

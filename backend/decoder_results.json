@@ -1,0 +1,27 @@
+{
+  "tuned_on": "train trips, LightGBM out-of-fold probabilities (every 3-th trip)",
+  "best_params": {
+    "alpha": 2.764329942462745,
+    "lam": 2.36379515070046,
+    "disc": 44.81930508881884,
+    "uturn": 15.18591893480836,
+    "gap_s": 14.259343596164264
+  },
+  "top_k": 10,
+  "n_trials": 25,
+  "train_oof_all": {
+    "classifier_only": 0.9070979364921472,
+    "hmm_default": 0.9247322523956365,
+    "hmm_tuned": 0.9244946229428473,
+    "continuity_classifier": 0.9154985140572811,
+    "continuity_hmm_tuned": 0.9956646909398814
+  },
+  "student_test": {
+    "classifier_only": 0.9048863339430363,
+    "hmm_default": 0.9190488633394304,
+    "hmm_tuned": 0.9193101646198066,
+    "continuity_classifier": 0.9270566301561408,
+    "continuity_hmm_tuned": 0.997910447761194,
+    "n_trips": 10
+  }
+}
