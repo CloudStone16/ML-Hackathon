@@ -43,6 +43,5 @@ This repository contains the implementation, experimental results, Bayesian hype
 │   ├── generate_plots_and_maps.py     # Generates compulsory EDA, MLP epoch loss, confusion matrix & Folium map visualisations
 │   └── outputs/                       # All generated PNG figures and interactive Folium HTML maps
 ├── results/                           # All CSV experiment logs, 5-fold CV tables, Bayesian trials & JSON metric summaries
-├── MLP_Model_Report_and_Viva_Guide.md # Complete answers to all compulsory report & viva questions (Sections 2–6)
 └── requirements.txt                   # Python dependencies
 ```

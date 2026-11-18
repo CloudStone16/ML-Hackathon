@@ -6,6 +6,39 @@ This repository contains the implementation, experimental results, Bayesian hype
 
 ---
 
+## Final system: LightGBM + HMM/Viterbi
+
+The final model is a LightGBM candidate classifier followed by HMM/Viterbi route reconstruction, served by a FastAPI backend (Laptop 1) and a browser UI (Laptop 2). Five models were compared (LightGBM, Random Forest, Deep MLP, Logistic Regression, XGBoost). The technical report is in `report/`, and metrics, tuning logs and scores are in `results/`.
+
+### Install
+```bash
+uv sync                      # or: pip install -r requirements.txt
+```
+Data layout expected by the scripts: `student_dataset/train/`, `student_dataset/student_test/` and `evaluator_test/` (the last one is not committed).
+
+### Reproduce the results
+```bash
+uv run python scripts/build_dataset.py            # candidates + features -> artifacts/
+uv run python scripts/train_lightgbm.py           # LightGBM with 5-fold group CV, saves results/lightgbm_model.joblib
+uv run python scripts/train_other_models.py       # Logistic Regression baseline
+uv run python scripts/tune_lightgbm.py 30         # Bayesian optimisation (Optuna TPE)
+PATHSNAP_DATA=<dir with train/ student_test/ evaluator_test/> uv run python scripts/eval_evaluator_test.py all
+bash report/run_notebooks.sh                      # report figures and Folium maps
+```
+The other models have their own instructions: `random_forest/README.md`, `xg boost/README.md`, `mlp/README.md`.
+
+### Run the API and UI (two laptops)
+```bash
+# Laptop 1 (API): evaluator trips go in server_data/evaluator_test/ (git-ignored)
+python -m uvicorn backend.app:app --host 0.0.0.0 --port 8000
+
+# Laptop 2 (UI)
+cd ui && python -m http.server 8080               # open http://localhost:8080 and enter the Laptop 1 address
+```
+Details, endpoints and environment variables: `backend/README.md` and `ui/README.md`.
+
+---
+
 ## Key Benchmark Results (PathSnap Deep MLP)
 
 | Metric | 5-Fold GroupKFold CV (80 Train Trips) | Student-Test: Untuned Deep MLP | Student-Test: Bayesian-Tuned Deep MLP | Student-Test: Tuned MLP + HMM/Viterbi |
@@ -43,7 +76,6 @@ This repository contains the implementation, experimental results, Bayesian hype
 │   ├── generate_plots_and_maps.py     # Generates compulsory EDA, MLP epoch loss, confusion matrix & Folium map visualisations
 │   └── outputs/                       # All generated PNG figures and interactive Folium HTML maps
 ├── results/                           # All CSV experiment logs, 5-fold CV tables, Bayesian trials & JSON metric summaries
-├── MLP_Model_Report_and_Viva_Guide.md # Complete answers to all compulsory report & viva questions (Sections 2–6)
 └── requirements.txt                   # Python dependencies
 ```
 

@@ -18,3 +18,5 @@ docs/
 artifacts/
 evaluator_test/
 student_dataset/
+!Report.pdf
+report/PathSnap_Technical_Report.docx

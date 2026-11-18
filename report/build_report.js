@@ -225,8 +225,9 @@ C.push(...Fig("map_01_route_comparison_static.png", "Reference route, classifier
 
 // ================= Screenshots
 C.push(H1("Screenshots"));
-C.push(P("[UI screenshot]", { color: GREY }));
-C.push(P("[API response screenshot, terminal of the receiving laptop]", { color: GREY }));
+C.push(...Fig("ui_01_trip_list.png", "Evaluator UI on Laptop 2: the evaluation trips listed by the API on Laptop 1.", 600));
+C.push(...Fig("ui_02_trip_result.png", "Evaluator UI on Laptop 2: result and request log for trip 00000015.", 600));
+C.push(P("[API response screenshot: terminal on Laptop 1]", { color: GREY }));
 
 // ---------------------------------------------------------------- document
 const doc = new Document({
