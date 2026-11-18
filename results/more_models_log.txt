@@ -1,0 +1,31 @@
+=== random_forest (Ensemble (bagging)) ===
+  fold 0: top1=0.8830 macroF1=0.9345 logloss=0.0676 (47s)
+  fold 1: top1=0.8959 macroF1=0.9426 logloss=0.0440 (46s)
+  fold 2: top1=0.9038 macroF1=0.9417 logloss=0.0526 (46s)
+  fold 3: top1=0.9312 macroF1=0.9581 logloss=0.0489 (45s)
+  fold 4: top1=0.8828 macroF1=0.9329 logloss=0.0582 (45s)
+[random_forest] student_test top1=0.8975 macroF1=0.9381 logloss=0.0493 continuity=0.9393 fit=60s
+  model file 92 MB > 50 MB, not kept
+                       cv_top1  cv_macro_f1  cv_logloss  test_top1  test_macro_f1  test_logloss  test_continuity
+lightgbm                0.9070       0.9449      0.0527     0.9049         0.9427        0.0464           0.9514
+logreg                  0.8871       0.9205      0.0820     0.8726         0.9153        0.0723           0.9320
+nearest_arc_heuristic   0.5502       0.5622      0.2534     0.5383         0.5569        0.2313           0.8210
+gaussian_nb             0.8628       0.8200      0.9271     0.8395         0.8024        0.9428           0.9360
+knn                     0.8729       0.9145      0.0954     0.8623         0.9079        0.0826           0.9385
+random_forest           0.8999       0.9423      0.0543     0.8975         0.9381        0.0493           0.9393
+=== extra_trees (Tree ensemble (randomized)) ===
+  fold 0: top1=0.8743 macroF1=0.9249 logloss=0.0780 (9s)
+  fold 1: top1=0.8849 macroF1=0.9334 logloss=0.0549 (9s)
+  fold 2: top1=0.8921 macroF1=0.9295 logloss=0.0662 (9s)
+  fold 3: top1=0.9206 macroF1=0.9473 logloss=0.0632 (9s)
+  fold 4: top1=0.8750 macroF1=0.9265 logloss=0.0702 (9s)
+[extra_trees] student_test top1=0.8783 macroF1=0.9273 logloss=0.0602 continuity=0.9294 fit=11s
+  model file 108 MB > 50 MB, not kept
+                       cv_top1  cv_macro_f1  cv_logloss  test_top1  test_macro_f1  test_logloss  test_continuity
+lightgbm                0.9070       0.9449      0.0527     0.9049         0.9427        0.0464           0.9514
+logreg                  0.8871       0.9205      0.0820     0.8726         0.9153        0.0723           0.9320
+nearest_arc_heuristic   0.5502       0.5622      0.2534     0.5383         0.5569        0.2313           0.8210
+gaussian_nb             0.8628       0.8200      0.9271     0.8395         0.8024        0.9428           0.9360
+knn                     0.8729       0.9145      0.0954     0.8623         0.9079        0.0826           0.9385
+random_forest           0.8999       0.9423      0.0543     0.8975         0.9381        0.0493           0.9393
+extra_trees             0.8900       0.9327      0.0665     0.8783         0.9273        0.0602           0.9294

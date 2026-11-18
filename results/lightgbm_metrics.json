@@ -1,0 +1,166 @@
+{
+  "lightgbm": {
+    "cv": {
+      "n_rows": 1716671,
+      "n_valid_pts": 180954,
+      "cand_accuracy": 0.9795598574217191,
+      "cand_precision": 0.9184439133132627,
+      "cand_recall": 0.884404512284856,
+      "cand_f1_pos": 0.9011028655338315,
+      "cand_macro_f1": 0.9448524632232458,
+      "log_loss": 0.05268160092570169,
+      "confusion": [
+        [
+          1521725,
+          14195
+        ],
+        [
+          20894,
+          159857
+        ]
+      ],
+      "top1_acc": 0.9069708323662368,
+      "top1_acc_given_candidate": 0.9079894440418034,
+      "candidate_miss_rate": 0.0011218320678183513,
+      "route_continuity": 0.9575350047041895,
+      "route_continuity_reference": 0.9881060488604398,
+      "fit_time_s_total_5folds": 49.69287967681885
+    },
+    "student_test": {
+      "n_rows": 206602,
+      "n_valid_pts": 19135,
+      "cand_accuracy": 0.9811473267441748,
+      "cand_precision": 0.917068097219181,
+      "cand_recall": 0.8756075889823864,
+      "cand_f1_pos": 0.8958583995080346,
+      "cand_macro_f1": 0.9427469633163092,
+      "log_loss": 0.04639194203207067,
+      "confusion": [
+        [
+          185954,
+          1515
+        ],
+        [
+          2380,
+          16753
+        ]
+      ],
+      "top1_acc": 0.9048863339430363,
+      "top1_acc_given_candidate": 0.904980923012596,
+      "candidate_miss_rate": 0.00010452051215048552,
+      "route_continuity": 0.9513700062748379,
+      "route_continuity_reference": 0.9856709549210334,
+      "fit_time_s": 10.936338186264038,
+      "inference_time_s": 0.3397679328918457,
+      "inference_us_per_row": 1.6445529708901447
+    }
+  },
+  "logreg": {
+    "cv": {
+      "n_rows": 1716671,
+      "n_valid_pts": 180954,
+      "cand_accuracy": 0.9705295889544356,
+      "cand_precision": 0.8738511029411765,
+      "cand_recall": 0.8415997698491294,
+      "cand_f1_pos": 0.8574222658110481,
+      "cand_macro_f1": 0.9204943358890443,
+      "log_loss": 0.08200785711284876,
+      "confusion": [
+        [
+          1513960,
+          21960
+        ],
+        [
+          28631,
+          152120
+        ]
+      ],
+      "top1_acc": 0.8870873260607668,
+      "top1_acc_given_candidate": 0.8880836067297,
+      "candidate_miss_rate": 0.0011218320678183513,
+      "route_continuity": 0.9402125186783995,
+      "route_continuity_reference": 0.9881060488604398,
+      "fit_time_s_total_5folds": 21.69557785987854
+    },
+    "student_test": {
+      "n_rows": 206602,
+      "n_valid_pts": 19135,
+      "cand_accuracy": 0.972042865025508,
+      "cand_precision": 0.8631395791419716,
+      "cand_recall": 0.8296660220561334,
+      "cand_f1_pos": 0.8460718473510287,
+      "cand_macro_f1": 0.9153485301491089,
+      "log_loss": 0.07234802743284774,
+      "confusion": [
+        [
+          184952,
+          2517
+        ],
+        [
+          3259,
+          15874
+        ]
+      ],
+      "top1_acc": 0.8726417559446041,
+      "top1_acc_given_candidate": 0.8727329744420634,
+      "candidate_miss_rate": 0.00010452051215048552,
+      "route_continuity": 0.9320225894164401,
+      "route_continuity_reference": 0.9856709549210334,
+      "fit_time_s": 5.467642068862915,
+      "inference_time_s": 0.029812097549438477,
+      "inference_us_per_row": 0.14429723598725316
+    }
+  },
+  "nearest_arc_heuristic": {
+    "cv": {
+      "n_rows": 1716671,
+      "n_valid_pts": 180954,
+      "cand_accuracy": 0.8948383237090858,
+      "cand_precision": 0.5028197152466934,
+      "cand_recall": 0.11000215766441127,
+      "cand_f1_pos": 0.1805133140258019,
+      "cand_macro_f1": 0.5621637060205722,
+      "log_loss": 0.2534374970194273,
+      "confusion": [
+        [
+          1516260,
+          19660
+        ],
+        [
+          160868,
+          19883
+        ]
+      ],
+      "top1_acc": 0.5501508670711893,
+      "top1_acc_given_candidate": 0.5507687371024227,
+      "candidate_miss_rate": 0.0011218320678183513,
+      "route_continuity": 0.8205822126293653,
+      "route_continuity_reference": 0.9881060488604398
+    },
+    "student_test": {
+      "n_rows": 206602,
+      "n_valid_pts": 19135,
+      "cand_accuracy": 0.9067191992333085,
+      "cand_precision": 0.4821566110397946,
+      "cand_recall": 0.09815502012230178,
+      "cand_f1_pos": 0.16310578426263678,
+      "cand_macro_f1": 0.5568563449321058,
+      "log_loss": 0.23134821269024916,
+      "confusion": [
+        [
+          185452,
+          2017
+        ],
+        [
+          17255,
+          1878
+        ]
+      ],
+      "top1_acc": 0.5382806375751241,
+      "top1_acc_given_candidate": 0.5383369048241259,
+      "candidate_miss_rate": 0.00010452051215048552,
+      "route_continuity": 0.8209579585860699,
+      "route_continuity_reference": 0.9856709549210334
+    }
+  }
+}
