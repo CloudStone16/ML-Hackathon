@@ -1,0 +1,4 @@
+model,config,cv_macro_f1,cv_top1_mean,student_top1,student_macro_f1,student_logloss,inference_s
+Deep MLP,untuned,0.9553,0.9041,0.9271,0.9576,0.0888,0.1821
+Deep MLP,"tuned, GP-EI search",0.9558,0.905,0.9329,0.9625,0.0684,0.2229
+Deep MLP,"re-tuned, TPE search",,0.9056905731707632,0.9319415448851774,,,

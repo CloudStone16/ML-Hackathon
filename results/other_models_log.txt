@@ -1,0 +1,35 @@
+=== logreg ===
+  fold 1: top1=0.8744 macroF1=0.9138
+  fold 2: top1=0.8818 macroF1=0.9181
+  fold 3: top1=0.8900 macroF1=0.9154
+  fold 4: top1=0.9130 macroF1=0.9351
+  fold 5: top1=0.8734 macroF1=0.9171
+[logreg] test top1=0.8726 macroF1=0.9153 logloss=0.0723 train_top1=0.8882423157266488
+=== gaussian_nb ===
+  fold 1: top1=0.8491 macroF1=0.8221
+  fold 2: top1=0.8690 macroF1=0.8146
+  fold 3: top1=0.8666 macroF1=0.8064
+  fold 4: top1=0.8929 macroF1=0.8309
+  fold 5: top1=0.8357 macroF1=0.8219
+[gaussian_nb] test top1=0.8395 macroF1=0.8024 logloss=0.9428 train_top1=0.863412801043359
+=== extra_trees ===
+  fold 1: top1=0.8743 macroF1=0.9249
+  fold 2: top1=0.8849 macroF1=0.9334
+  fold 3: top1=0.8921 macroF1=0.9295
+  fold 4: top1=0.9206 macroF1=0.9473
+  fold 5: top1=0.8750 macroF1=0.9265
+[extra_trees] test top1=0.8783 macroF1=0.9273 logloss=0.0602 train_top1=0.8997535285210606
+=== nearest_arc ===
+  fold 1: top1=0.6160 macroF1=0.5544
+  fold 2: top1=0.5027 macroF1=0.5721
+  fold 3: top1=0.5661 macroF1=0.5659
+  fold 4: top1=0.5460 macroF1=0.5546
+  fold 5: top1=0.5045 macroF1=0.5652
+[nearest_arc] test top1=0.5383 macroF1=0.5569 logloss=0.2313 train_top1=None
+=== lightgbm ===
+[lightgbm] test top1=0.9049 macroF1=0.9427 logloss=0.0464 train_top1=0.9507941244736231
+=== random_forest ===
+[random_forest] test top1=0.8975 macroF1=0.9381 logloss=0.0493 train_top1=0.9265227626910707
+=== knn ===
+  fold 1: top1=0.8635 macroF1=0.9091
+  fold 2: top1=0.8586 macroF1=0.9094

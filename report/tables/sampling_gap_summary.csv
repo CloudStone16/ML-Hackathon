@@ -1,0 +1,4 @@
+,steps,% exactly 1 s,% > 5 s,steps > 60 s,largest gap (s)
+train,208337.0,96.501,0.584,69.0,153064.0
+student_test,19150.0,98.621,0.23,1.0,210.0
+evaluator_test,19664.0,99.288,0.081,3.0,220.001

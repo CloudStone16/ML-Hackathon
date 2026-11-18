@@ -1,0 +1,4 @@
+partition,trips,gps_points,mean_points,min_points,max_points,mean_nodes,mean_arcs,mean_route_arcs,mean_length_km,mean_pct_1hz,max_gap_s,trips_with_gap_gt_60s
+evaluator_test,10,19674,1967.4,458,6854,16883.2,33852.8,357.1,27.07,98.8,220.0,1
+student_test,10,19160,1916.0,262,3958,9068.9,18504.1,347.7,29.64,98.2,210.0,1
+train,80,208417,2605.21,361,19313,24168.56,48461.3,391.7,37.15,93.83,153064.0,22

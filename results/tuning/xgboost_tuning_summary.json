@@ -1,0 +1,39 @@
+{
+  "objective": "mean 5-fold GroupKFold observation-level Top-1 (train trips only)",
+  "n_trials": 30,
+  "search_seconds": 525.0305778980255,
+  "best_cv_top1_mean": 0.842030656715948,
+  "their_tuned_cv_top1_mean": 0.8410227311045176,
+  "best_params": {
+    "n_estimators": 423,
+    "max_depth": 7,
+    "learning_rate": 0.024409288637418296,
+    "subsample": 0.7480675744908061,
+    "colsample_bytree": 0.6825782802968571,
+    "min_child_weight": 1.5872353698267283,
+    "gamma": 2.7007231145300152,
+    "reg_lambda": 1.3333081075826645,
+    "reg_alpha": 0.3586379747182303
+  },
+  "student_test_their_untuned": {
+    "top1_acc": 0.8562108559498957,
+    "f1_macro": 0.9173203110987269,
+    "log_loss": 0.07509089261293411,
+    "fit_s": 2.7411839962005615,
+    "inference_s": 0.044753313064575195
+  },
+  "student_test_their_tuned": {
+    "top1_acc": 0.8533402922755741,
+    "f1_macro": 0.9153230335762104,
+    "log_loss": 0.07488691061735153,
+    "fit_s": 5.650784015655518,
+    "inference_s": 0.10444998741149902
+  },
+  "student_test_retuned": {
+    "top1_acc": 0.8542275574112735,
+    "f1_macro": 0.9159820910099448,
+    "log_loss": 0.07476688176393509,
+    "fit_s": 4.396922826766968,
+    "inference_s": 0.07711911201477051
+  }
+}

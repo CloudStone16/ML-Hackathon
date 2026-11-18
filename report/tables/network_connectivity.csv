@@ -1,0 +1,4 @@
+partition,mean_nodes,mean_arcs,mean_components,min_largest_component_pct,isolated_nodes,route_connectivity
+evaluator_test,16883.2,33852.8,23.7,95.0552,0,1.0
+student_test,9068.9,18504.1,22.7,87.4034,0,0.9997
+train,24168.5625,48461.3,39.0125,69.2797,0,0.9993

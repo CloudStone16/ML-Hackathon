@@ -1,0 +1,58 @@
+{
+  "objective": "mean 5-fold GroupKFold observation-level Top-1 (train trips only, clean early stopping)",
+  "n_trials": 15,
+  "search_seconds": 2983.4496519565582,
+  "best_cv_top1_mean": 0.9056905731707632,
+  "their_tuned_cv_top1_mean": 0.9047681812324122,
+  "best_params": {
+    "hidden_dim": 160,
+    "head_dim": 32,
+    "dropout": 0.25386535711370856,
+    "lr": 0.0035484764389234246,
+    "listwise_weight": 0.5645035840204936,
+    "pos_weight": 1.925524416023135,
+    "epochs": 26
+  },
+  "student_test_their_tuned": {
+    "top1_mean": 0.9314544189283228,
+    "top1_std": 0.0021292401699876196,
+    "seeds": [
+      {
+        "seed": 42,
+        "student_top1": 0.9311586638830898,
+        "fit_s": 20.10119605064392
+      },
+      {
+        "seed": 7,
+        "student_top1": 0.9294885177453027,
+        "fit_s": 18.85602903366089
+      },
+      {
+        "seed": 123,
+        "student_top1": 0.9337160751565762,
+        "fit_s": 17.970091819763184
+      }
+    ]
+  },
+  "student_test_retuned": {
+    "top1_mean": 0.9319415448851774,
+    "top1_std": 0.0016204775257056263,
+    "seeds": [
+      {
+        "seed": 42,
+        "student_top1": 0.9303757828810021,
+        "fit_s": 24.831762075424194
+      },
+      {
+        "seed": 7,
+        "student_top1": 0.9336116910229645,
+        "fit_s": 24.59108567237854
+      },
+      {
+        "seed": 123,
+        "student_top1": 0.9318371607515658,
+        "fit_s": 24.89686393737793
+      }
+    ]
+  }
+}

@@ -46,3 +46,9 @@ This repository contains the implementation, experimental results, Bayesian hype
 ├── MLP_Model_Report_and_Viva_Guide.md # Complete answers to all compulsory report & viva questions (Sections 2–6)
 └── requirements.txt                   # Python dependencies
 ```
+
+Evaluator-test results (all kept models, scored on one common truth): `results/evaluator_test/`.
+
+```bash
+PATHSNAP_DATA=<dir with train/ student_test/ evaluator_test/> uv run python scripts/eval_evaluator_test.py all
+```

@@ -1,0 +1,36 @@
+== A. saved model equals a fresh retrain from the code
+excluded trips ['00000033', '00000054'] | train trips 78 | rows 1716671
+PASS saved model feature names == FEATURES (36, no label/route columns)
+PASS saved model params: 400 trees, 63 leaves
+== B/C/D. end-to-end scoring, independent recomputation, metric sanity
+PASS student_test: feature table has no label column (built without the route)
+PASS student_test: 10 trips, same ids as truth
+   student_test: max |p_saved - p_fresh| = 4.00e-15
+   student_test saved model: classifier top1 0.9037 (independent 0.9037) | +HMM top1 0.9317 (independent 0.9317, per-trip weighted mean 0.9317) | continuity 0.9514 -> 0.9958 | miss 0.0014
+PASS    saved model: helper metric == independent recomputation == per-trip weighted mean
+   student_test fresh retrain: classifier top1 0.9037 (independent 0.9037) | +HMM top1 0.9317 (independent 0.9317, per-trip weighted mean 0.9317) | continuity 0.9514 -> 0.9958 | miss 0.0014
+PASS    fresh retrain: helper metric == independent recomputation == per-trip weighted mean
+PASS student_test: perfect predictions score 1.0
+PASS student_test: random arcs score about 0
+FAIL student_test: 99.87% of points within 60 m of their aligned truth arc (median 5.3 m)
+PASS evaluator_test: feature table has no label column (built without the route)
+PASS evaluator_test: 10 trips, same ids as truth
+   evaluator_test: max |p_saved - p_fresh| = 2.30e-14
+   evaluator_test saved model: classifier top1 0.9254 (independent 0.9254) | +HMM top1 0.9411 (independent 0.9411, per-trip weighted mean 0.9411) | continuity 0.9562 -> 0.9954 | miss 0.0011
+PASS    saved model: helper metric == independent recomputation == per-trip weighted mean
+   evaluator_test fresh retrain: classifier top1 0.9254 (independent 0.9254) | +HMM top1 0.9411 (independent 0.9411, per-trip weighted mean 0.9411) | continuity 0.9562 -> 0.9954 | miss 0.0011
+PASS    fresh retrain: helper metric == independent recomputation == per-trip weighted mean
+PASS evaluator_test: perfect predictions score 1.0
+PASS evaluator_test: random arcs score about 0
+PASS evaluator_test: 99.99% of points within 60 m of their aligned truth arc (median 4.9 m)
+== E. leakage and data hygiene
+PASS no trip id shared between partitions
+PASS no identical .track file shared between partitions (no duplicated trips under different ids)
+PASS model trained only on training-partition trips
+PASS Viterbi decoder source never reads truth or labels
+   decoder tuning objective: maximise observation-level top-1 on train out-of-fold probabilities (every 2nd train trip)
+== F. headline (classifier top1, +HMM top1, +HMM continuity)
+   ('student_test', 'saved') [0.9037, 0.9317, 0.9958]
+   ('student_test', 'fresh') [0.9037, 0.9317, 0.9958]
+   ('evaluator_test', 'saved') [0.9254, 0.9411, 0.9954]
+   ('evaluator_test', 'fresh') [0.9254, 0.9411, 0.9954]

@@ -1,0 +1,4 @@
+partition,NaN or inf values,invalid coordinates,duplicate timestamps,timestamps going back,isolated road nodes,trips with a gap over 60 s,trips
+evaluator_test,0,0,0,0,0,1,10
+student_test,0,0,0,0,0,1,10
+train,0,0,0,0,0,22,80

@@ -1,0 +1,91 @@
+16:23:01 | INFO | model kind: lightgbm
+16:23:01 | INFO | model dir : /Users/cloudstone/PES/ML/Hackathon/ML-Hackathon/results
+16:23:01 | INFO | data dir  : /Users/cloudstone/PES/ML/Hackathon/ML-Hackathon/evaluator_test
+16:23:01 | INFO | model     : LightGBM + HMM/Viterbi
+16:23:01 | INFO | trips     : 10 available ['00000015', '00000017', '00000023', '00000030', '00000049', '00000059', '00000067', '00000073', '00000087', '00000094']
+INFO:     Started server process [85463]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+16:23:10 | INFO | 127.0.0.1 GET /health -> 200 (1 ms)
+INFO:     127.0.0.1:63817 - "GET /health HTTP/1.1" 200 OK
+16:23:13 | INFO | 127.0.0.1 GET /health -> 200 (1 ms)
+INFO:     127.0.0.1:63828 - "GET /health HTTP/1.1" 200 OK
+16:23:13 | INFO | 127.0.0.1 GET /trips -> 200 (2 ms)
+INFO:     127.0.0.1:63829 - "GET /trips HTTP/1.1" 200 OK
+16:23:13 | INFO | PREDICT request  trip=00000015 from 127.0.0.1
+16:23:14 | INFO | PREDICT done     trip=00000015 points=6854 | top1 HMM=0.9215 clf-only=0.8840 | continuity=0.9914 seqF1=0.9010 | 0.32s (features 0.14, model 0.11, viterbi 0.07)
+16:23:14 | INFO | 127.0.0.1 POST /predict -> 200 (418 ms)
+INFO:     127.0.0.1:63830 - "POST /predict HTTP/1.1" 200 OK
+16:23:14 | INFO | PREDICT request  trip=00000017 from 127.0.0.1
+16:23:14 | INFO | PREDICT done     trip=00000017 points=1346 | top1 HMM=0.9368 clf-only=0.9212 | continuity=0.8981 seqF1=0.8870 | 0.21s (features 0.12, model 0.05, viterbi 0.04)
+16:23:14 | INFO | 127.0.0.1 POST /predict -> 200 (377 ms)
+INFO:     127.0.0.1:63831 - "POST /predict HTTP/1.1" 200 OK
+16:23:14 | INFO | PREDICT request  trip=00000023 from 127.0.0.1
+16:23:14 | INFO | PREDICT done     trip=00000023 points=458 | top1 HMM=0.9520 clf-only=0.9476 | continuity=0.9869 seqF1=0.9123 | 0.05s (features 0.03, model 0.01, viterbi 0.01)
+16:23:14 | INFO | 127.0.0.1 POST /predict -> 200 (89 ms)
+INFO:     127.0.0.1:63832 - "POST /predict HTTP/1.1" 200 OK
+16:23:14 | INFO | PREDICT request  trip=00000030 from 127.0.0.1
+16:23:14 | INFO | PREDICT done     trip=00000030 points=654 | top1 HMM=0.8624 clf-only=0.8150 | continuity=0.9188 seqF1=0.8328 | 0.09s (features 0.05, model 0.03, viterbi 0.01)
+16:23:14 | INFO | 127.0.0.1 POST /predict -> 200 (138 ms)
+INFO:     127.0.0.1:63833 - "POST /predict HTTP/1.1" 200 OK
+16:23:14 | INFO | PREDICT request  trip=00000049 from 127.0.0.1
+16:23:14 | INFO | PREDICT done     trip=00000049 points=2642 | top1 HMM=0.9921 clf-only=0.9890 | continuity=0.9947 seqF1=0.9826 | 0.16s (features 0.10, model 0.03, viterbi 0.04)
+16:23:14 | INFO | 127.0.0.1 POST /predict -> 200 (314 ms)
+INFO:     127.0.0.1:63834 - "POST /predict HTTP/1.1" 200 OK
+16:23:14 | INFO | PREDICT request  trip=00000059 from 127.0.0.1
+16:23:15 | INFO | PREDICT done     trip=00000059 points=1031 | top1 HMM=0.9399 clf-only=0.9253 | continuity=0.9388 seqF1=0.8821 | 0.12s (features 0.06, model 0.03, viterbi 0.02)
+16:23:15 | INFO | 127.0.0.1 POST /predict -> 200 (194 ms)
+INFO:     127.0.0.1:63835 - "POST /predict HTTP/1.1" 200 OK
+16:23:15 | INFO | PREDICT request  trip=00000067 from 127.0.0.1
+16:23:15 | INFO | PREDICT done     trip=00000067 points=916 | top1 HMM=0.9694 clf-only=0.9683 | continuity=0.9934 seqF1=0.9554 | 0.06s (features 0.03, model 0.01, viterbi 0.01)
+16:23:15 | INFO | 127.0.0.1 POST /predict -> 200 (75 ms)
+INFO:     127.0.0.1:63836 - "POST /predict HTTP/1.1" 200 OK
+16:23:15 | INFO | PREDICT request  trip=00000073 from 127.0.0.1
+16:23:15 | INFO | PREDICT done     trip=00000073 points=1144 | top1 HMM=0.9799 clf-only=0.9755 | continuity=0.9913 seqF1=0.9785 | 0.10s (features 0.06, model 0.02, viterbi 0.02)
+16:23:15 | INFO | 127.0.0.1 POST /predict -> 200 (161 ms)
+INFO:     127.0.0.1:63837 - "POST /predict HTTP/1.1" 200 OK
+16:23:15 | INFO | PREDICT request  trip=00000087 from 127.0.0.1
+16:23:15 | INFO | PREDICT done     trip=00000087 points=1399 | top1 HMM=0.9864 clf-only=0.9585 | continuity=0.9914 seqF1=0.9855 | 0.17s (features 0.12, model 0.02, viterbi 0.03)
+16:23:15 | INFO | 127.0.0.1 POST /predict -> 200 (384 ms)
+INFO:     127.0.0.1:63838 - "POST /predict HTTP/1.1" 200 OK
+16:23:15 | INFO | PREDICT request  trip=00000094 from 127.0.0.1
+16:23:16 | INFO | PREDICT done     trip=00000094 points=3230 | top1 HMM=0.9477 clf-only=0.9399 | continuity=0.9851 seqF1=0.9597 | 0.20s (features 0.09, model 0.06, viterbi 0.05)
+16:23:16 | INFO | 127.0.0.1 POST /predict -> 200 (340 ms)
+INFO:     127.0.0.1:63839 - "POST /predict HTTP/1.1" 200 OK
+16:23:16 | INFO | 100.124.123.106 GET /health -> 200 (1 ms)
+INFO:     100.124.123.106:63841 - "GET /health HTTP/1.1" 200 OK
+16:24:45 | INFO | 100.71.36.2 GET /health -> 200 (3 ms)
+INFO:     100.71.36.2:61427 - "GET /health HTTP/1.1" 200 OK
+16:24:45 | INFO | 100.71.36.2 GET /trips -> 200 (6 ms)
+INFO:     100.71.36.2:61427 - "GET /trips HTTP/1.1" 200 OK
+16:24:49 | INFO | 100.71.36.2 GET /health -> 200 (3 ms)
+INFO:     100.71.36.2:61427 - "GET /health HTTP/1.1" 200 OK
+16:24:50 | INFO | 100.71.36.2 GET /trips -> 200 (7 ms)
+INFO:     100.71.36.2:61427 - "GET /trips HTTP/1.1" 200 OK
+16:24:50 | INFO | 100.71.36.2 GET /health -> 200 (2 ms)
+INFO:     100.71.36.2:61427 - "GET /health HTTP/1.1" 200 OK
+16:24:51 | INFO | 100.71.36.2 GET /trips -> 200 (8 ms)
+INFO:     100.71.36.2:61427 - "GET /trips HTTP/1.1" 200 OK
+16:25:05 | INFO | 100.71.36.2 OPTIONS /predict -> 200 (1 ms)
+INFO:     100.71.36.2:49671 - "OPTIONS /predict HTTP/1.1" 200 OK
+16:25:05 | INFO | PREDICT request  trip=00000015 from 100.71.36.2
+16:25:05 | INFO | PREDICT done     trip=00000015 points=6854 | top1 HMM=0.9215 clf-only=0.8840 | continuity=0.9914 seqF1=0.9010 | 0.30s (features 0.13, model 0.10, viterbi 0.07)
+16:25:05 | INFO | 100.71.36.2 POST /predict -> 200 (374 ms)
+INFO:     100.71.36.2:49671 - "POST /predict HTTP/1.1" 200 OK
+16:25:22 | INFO | PREDICT request  trip=00000015 from 100.71.36.2
+16:25:23 | INFO | PREDICT done     trip=00000015 points=6854 | top1 HMM=0.9215 clf-only=0.8840 | continuity=0.9914 seqF1=0.9010 | 0.29s (features 0.13, model 0.10, viterbi 0.06)
+16:25:23 | INFO | 100.71.36.2 POST /predict -> 200 (366 ms)
+INFO:     100.71.36.2:50962 - "POST /predict HTTP/1.1" 200 OK
+16:25:26 | INFO | 100.71.36.2 GET /health -> 200 (3 ms)
+INFO:     100.71.36.2:50962 - "GET /health HTTP/1.1" 200 OK
+16:25:26 | INFO | 100.71.36.2 GET /trips -> 200 (7 ms)
+INFO:     100.71.36.2:50962 - "GET /trips HTTP/1.1" 200 OK
+16:26:10 | INFO | PREDICT request  trip=00000015 from 100.71.36.2
+16:26:11 | INFO | PREDICT done     trip=00000015 points=6854 | top1 HMM=0.9215 clf-only=0.8840 | continuity=0.9914 seqF1=0.9010 | 0.29s (features 0.13, model 0.10, viterbi 0.07)
+16:26:11 | INFO | 100.71.36.2 POST /predict -> 200 (372 ms)
+INFO:     100.71.36.2:63959 - "POST /predict HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [85463]

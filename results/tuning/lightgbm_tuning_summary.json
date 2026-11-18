@@ -1,0 +1,34 @@
+{
+  "objective": "mean 5-fold GroupKFold observation-level Top-1 (train trips only)",
+  "n_trials": 30,
+  "search_seconds": 4814.130345106125,
+  "best_cv_top1_mean": 0.9077505569301204,
+  "untuned_cv_top1_mean": 0.9061668064417221,
+  "best_params": {
+    "n_estimators": 491,
+    "learning_rate": 0.02629626840833542,
+    "num_leaves": 235,
+    "min_child_samples": 133,
+    "subsample": 0.8598225486851775,
+    "colsample_bytree": 0.5328890799496117,
+    "reg_lambda": 0.004271393458607683,
+    "reg_alpha": 0.0016987368669367786,
+    "min_split_gain": 0.10112494353815513
+  },
+  "student_test_untuned": {
+    "top1_acc": 0.9026391429318004,
+    "cand_macro_f1": 0.9427455665700984,
+    "log_loss": 0.046430588748069275,
+    "route_continuity": 0.9513700062748379,
+    "fit_s": 8.276462078094482,
+    "inference_s": 0.48647594451904297
+  },
+  "student_test_tuned": {
+    "top1_acc": 0.9034753070290045,
+    "cand_macro_f1": 0.9433773644606309,
+    "log_loss": 0.04604520448108084,
+    "route_continuity": 0.9521543610123405,
+    "fit_s": 25.562209129333496,
+    "inference_s": 1.1596601009368896
+  }
+}

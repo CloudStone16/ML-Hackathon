@@ -1,0 +1,22 @@
+Top-1 of each final pipeline (classifier + HMM) scored against three different per-point labellers
+student_test: points per labeller {'mine': 19160, 'xgb': 19160, 'mlp': 19160}
+   agreement XGBoost labeller vs my labeller: 0.9535
+   agreement MLP labeller vs my labeller: 0.9738
+   agreement MLP labeller vs XGBoost labeller: 0.9652
+evaluator_test: points per labeller {'mine': 19674, 'xgb': 19674, 'mlp': 19674}
+   agreement XGBoost labeller vs my labeller: 0.9707
+   agreement MLP labeller vs my labeller: 0.9741
+   agreement MLP labeller vs XGBoost labeller: 0.9931
+         split            pipeline  my labeller  XGBoost labeller  MLP labeller
+  student_test      LightGBM + HMM       0.9317            0.9330        0.9366
+  student_test           MLP + HMM       0.9207            0.9217        0.9335
+  student_test       XGBoost + HMM       0.9210            0.9338        0.9321
+  student_test LightGBM classifier       0.9037            0.9056        0.9080
+  student_test      MLP classifier       0.9186            0.9141        0.9312
+  student_test  XGBoost classifier       0.8489            0.8551        0.8590
+evaluator_test      LightGBM + HMM       0.9411            0.9428        0.9438
+evaluator_test           MLP + HMM       0.9438            0.9505        0.9537
+evaluator_test       XGBoost + HMM       0.9072            0.9185        0.9157
+evaluator_test LightGBM classifier       0.9254            0.9307        0.9321
+evaluator_test      MLP classifier       0.9402            0.9491        0.9523
+evaluator_test  XGBoost classifier       0.7801            0.7931        0.7911

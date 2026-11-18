@@ -1,4 +1,4 @@
-"""Train LightGBM candidate classifier (+ LogReg and nearest-arc baselines).
+"""Train LightGBM candidate classifier .
 
 CV: GroupKFold by trip on the 80 training trips. Final: fit on all train, evaluate on student_test.
 """
@@ -76,14 +76,7 @@ def continuity(picks, _):
 def make_models():
     return {
         "lightgbm": lambda: lgb.LGBMClassifier(**LGB_PARAMS),
-        "logreg": lambda: make_pipeline(SimpleImputer(strategy="median"), StandardScaler(),
-                                        LogisticRegression(max_iter=300, C=1.0, random_state=SEED)),
     }
-
-
-def nearest_baseline_scores(df):
-    """Heuristic reference: closest arc wins (score = -d mapped to (0,1))."""
-    return 1.0 / (1.0 + df["d"].to_numpy())
 
 
 def main():
@@ -116,8 +109,6 @@ def main():
         cv = evaluate(tr, oof, sum(valid_pts.values()))
         cv["fit_time_s_total_5folds"] = t_fit
         results[name] = {"cv": cv}
-    # nearest-arc heuristic (no training)
-    results["nearest_arc_heuristic"] = {"cv": evaluate(tr, nearest_baseline_scores(tr), sum(valid_pts.values()))}
 
     # final fit on all training trips, evaluate on student_test
     final = {}
@@ -131,7 +122,6 @@ def main():
         final[name] = m
         print(f"[{name}] student_test top1={r['top1_acc']:.4f} macroF1={r['cand_macro_f1']:.4f} "
               f"logloss={r['log_loss']:.4f} continuity={r['route_continuity']:.4f} fit={fit_s:.0f}s", flush=True)
-    results["nearest_arc_heuristic"]["student_test"] = evaluate(te, nearest_baseline_scores(te), sum(valid_pts_te.values()))
 
     # save
     res_dir = ROOT / "results"

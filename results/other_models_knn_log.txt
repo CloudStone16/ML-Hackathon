@@ -1,0 +1,7 @@
+=== knn ===
+  fold 1: top1=0.8575 macroF1=0.9033
+  fold 2: top1=0.8555 macroF1=0.9071
+  fold 3: top1=0.8651 macroF1=0.9034
+  fold 4: top1=0.8974 macroF1=0.9255
+  fold 5: top1=0.8576 macroF1=0.9095
+[knn] test top1=0.8595 macroF1=0.9068 logloss=0.0850 train_top1=None

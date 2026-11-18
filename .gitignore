@@ -10,3 +10,11 @@ _teammate_repo/
 
 # Evaluator data holds the hidden answers: never commit
 server_data/
+report/node_modules/
+
+# Local-only material
+docs/
+.DS_Store
+artifacts/
+evaluator_test/
+student_dataset/

@@ -1,0 +1,33 @@
+[I 2026-11-18 14:24:26,223] A new study created in memory with name: no-name-4d58790b-5a60-4458-ad34-d0f9817ff2a1
+[I 2026-11-18 14:25:45,598] Trial 0 finished with value: 0.9047681812324122 and parameters: {'hidden_dim': 128, 'head_dim': 64, 'dropout': 0.1, 'lr': 0.0032, 'listwise_weight': 0.4, 'pos_weight': 1.55, 'epochs': 26}. Best is trial 0 with value: 0.9047681812324122.
+trial 0: COMPLETE value=0.9047681812324122 best=0.9048 (79s)
+[I 2026-11-18 14:41:32,017] Trial 1 finished with value: 0.9037581345550001 and parameters: {'hidden_dim': 96, 'head_dim': 64, 'dropout': 0.22701814444901136, 'lr': 0.0010375710602388843, 'listwise_weight': 0.6849549260809972, 'pos_weight': 1.9989311689605063, 'epochs': 20}. Best is trial 0 with value: 0.9047681812324122.
+trial 1: COMPLETE value=0.9037581345550001 best=0.9048 (1026s)
+[I 2026-11-18 14:44:13,586] Trial 2 finished with value: 0.9047374003368613 and parameters: {'hidden_dim': 256, 'head_dim': 96, 'dropout': 0.2462939903482534, 'lr': 0.00143013291848082, 'listwise_weight': 0.45711721920680576, 'pos_weight': 1.710897482634451, 'epochs': 26}. Best is trial 0 with value: 0.9047681812324122.
+trial 2: COMPLETE value=0.9047374003368613 best=0.9048 (1187s)
+[I 2026-11-18 14:45:16,266] Trial 3 finished with value: 0.9048206265068686 and parameters: {'hidden_dim': 128, 'head_dim': 48, 'dropout': 0.17379422752781754, 'lr': 0.0010635538173147825, 'listwise_weight': 0.654660201039391, 'pos_weight': 1.3105359779200203, 'epochs': 20}. Best is trial 3 with value: 0.9048206265068686.
+trial 3: COMPLETE value=0.9048206265068686 best=0.9048 (1250s)
+[I 2026-11-18 14:46:35,885] Trial 4 finished with value: 0.905010059481552 and parameters: {'hidden_dim': 128, 'head_dim': 64, 'dropout': 0.0989957156047863, 'lr': 0.0010844103935147872, 'listwise_weight': 0.3626651653816322, 'pos_weight': 1.4664127476273785, 'epochs': 26}. Best is trial 4 with value: 0.905010059481552.
+trial 4: COMPLETE value=0.905010059481552 best=0.9050 (1330s)
+[I 2026-11-18 14:48:07,545] Trial 5 finished with value: 0.9056905731707632 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.25386535711370856, 'lr': 0.0035484764389234246, 'listwise_weight': 0.5645035840204936, 'pos_weight': 1.925524416023135, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 5: COMPLETE value=0.9056905731707632 best=0.9057 (1421s)
+[I 2026-11-18 14:49:34,927] Trial 6 finished with value: 0.9052386585169664 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.10197439109107098, 'lr': 0.0038337624994229207, 'listwise_weight': 0.38976150615047717, 'pos_weight': 2.0662542097431214, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 6: COMPLETE value=0.9052386585169664 best=0.9057 (1509s)
+[I 2026-11-18 14:51:07,998] Trial 7 finished with value: 0.9052616718780702 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.19776813650065259, 'lr': 0.0026714177839256975, 'listwise_weight': 0.4985770461224772, 'pos_weight': 1.1172840003470113, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 7: COMPLETE value=0.9052616718780702 best=0.9057 (1602s)
+[I 2026-11-18 14:53:40,258] Trial 8 finished with value: 0.904680674488381 and parameters: {'hidden_dim': 256, 'head_dim': 32, 'dropout': 0.2888621636691532, 'lr': 0.004662194876019177, 'listwise_weight': 0.6684448270020124, 'pos_weight': 1.8816253076986666, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 8: COMPLETE value=0.904680674488381 best=0.9057 (1754s)
+[I 2026-11-18 14:55:36,676] Trial 9 finished with value: 0.9049832360429674 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.2048195736336744, 'lr': 0.0020962372312750286, 'listwise_weight': 0.5904299441514691, 'pos_weight': 2.0840720937728143, 'epochs': 34}. Best is trial 5 with value: 0.9056905731707632.
+trial 9: COMPLETE value=0.9049832360429674 best=0.9057 (1870s)
+[I 2026-11-18 14:56:06,492] Trial 10 pruned. 
+trial 10: PRUNED value=0.9130869306748011 best=0.9057 (1900s)
+[I 2026-11-18 14:57:42,259] Trial 11 finished with value: 0.9054102796393739 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.23097042752990893, 'lr': 0.0027459518366611474, 'listwise_weight': 0.40446791198876025, 'pos_weight': 1.481324070498671, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 11: COMPLETE value=0.9054102796393739 best=0.9057 (1996s)
+[I 2026-11-18 15:05:09,505] Trial 12 finished with value: 0.905008146937309 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.20663333998914332, 'lr': 0.004186957590501138, 'listwise_weight': 0.5870727696718488, 'pos_weight': 1.7525502742123087, 'epochs': 34}. Best is trial 5 with value: 0.9056905731707632.
+trial 12: COMPLETE value=0.905008146937309 best=0.9057 (2443s)
+[I 2026-11-18 15:06:48,246] Trial 13 finished with value: 0.9052630407198781 and parameters: {'hidden_dim': 160, 'head_dim': 64, 'dropout': 0.28485223473881977, 'lr': 0.002269822242289656, 'listwise_weight': 0.39575924406938845, 'pos_weight': 1.354389265280402, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 13: COMPLETE value=0.9052630407198781 best=0.9057 (2542s)
+[I 2026-11-18 15:14:09,672] Trial 14 finished with value: 0.9056119247033602 and parameters: {'hidden_dim': 160, 'head_dim': 32, 'dropout': 0.2690664399717399, 'lr': 0.003646365560558925, 'listwise_weight': 0.5628294882904055, 'pos_weight': 1.4932854207112927, 'epochs': 26}. Best is trial 5 with value: 0.9056905731707632.
+trial 14: COMPLETE value=0.9056119247033602 best=0.9057 (2983s)
+their_tuned {'top1_mean': 0.9314544189283228, 'top1_std': 0.0021292401699876196, 'seeds': [{'seed': 42, 'student_top1': 0.9311586638830898, 'fit_s': 20.10119605064392}, {'seed': 7, 'student_top1': 0.9294885177453027, 'fit_s': 18.85602903366089}, {'seed': 123, 'student_top1': 0.9337160751565762, 'fit_s': 17.970091819763184}]}
+retuned {'top1_mean': 0.9319415448851774, 'top1_std': 0.0016204775257056263, 'seeds': [{'seed': 42, 'student_top1': 0.9303757828810021, 'fit_s': 24.831762075424194}, {'seed': 7, 'student_top1': 0.9336116910229645, 'fit_s': 24.59108567237854}, {'seed': 123, 'student_top1': 0.9318371607515658, 'fit_s': 24.89686393737793}]}

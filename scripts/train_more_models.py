@@ -1,9 +1,9 @@
-"""Train Random Forest, Extra Trees, KNN and Gaussian NB with the same protocol as LightGBM.
+"""Train the Random Forest (second-best of my models) with the same protocol as LightGBM.
 
 Reuses load/evaluate from train_lightgbm.py. GroupKFold(5) by trip on the training trips, then fit
 on all training trips and evaluate on student_test. Results are merged into results/model_comparison.csv.
 
-Usage: uv run python scripts/train_more_models.py [model ...]   (default: all four)
+Usage: uv run python scripts/train_more_models.py [model ...]   (default: random_forest)
 """
 import json
 import sys
@@ -13,14 +13,10 @@ from pathlib import Path
 import joblib
 import numpy as np
 import pandas as pd
-import torch
-from sklearn.base import BaseEstimator, ClassifierMixin
-from sklearn.ensemble import ExtraTreesClassifier, RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.impute import SimpleImputer
 from sklearn.model_selection import GroupKFold
-from sklearn.naive_bayes import GaussianNB
 from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
@@ -32,49 +28,16 @@ KNN_TRAIN_ROWS = 200_000
 N_JOBS = 8   # leave CPU headroom (14 cores on this machine)
 
 
-class TorchKNN(BaseEstimator, ClassifierMixin):
-    """Distance-weighted KNN computed on the Apple GPU (PyTorch MPS); falls back to CPU."""
-
-    def __init__(self, n_neighbors=25, chunk=4096):
-        self.n_neighbors, self.chunk = n_neighbors, chunk
-
-    def fit(self, X, y):
-        self.device_ = "mps" if torch.backends.mps.is_available() else "cpu"
-        self.classes_ = np.array([0, 1])
-        self.X_ = torch.as_tensor(np.asarray(X, dtype=np.float32), device=self.device_)
-        self.y_ = torch.as_tensor(np.asarray(y, dtype=np.float32), device=self.device_)
-        return self
-
-    def predict_proba(self, X):
-        Xq = torch.as_tensor(np.asarray(X, dtype=np.float32), device=self.device_)
-        out = []
-        for i in range(0, len(Xq), self.chunk):
-            d = torch.cdist(Xq[i:i + self.chunk], self.X_)
-            dist, idx = torch.topk(d, self.n_neighbors, dim=1, largest=False)
-            w = 1.0 / (dist + 1e-6)                      # distance weighting
-            out.append(((w * self.y_[idx]).sum(1) / w.sum(1)).cpu())
-        p1 = torch.cat(out).numpy().astype(np.float64)
-        return np.column_stack([1 - p1, p1])
-MAX_SAVE_MB = 50
 CONFIGS = {
     "random_forest": ("Ensemble (bagging)", dict(n_estimators=150, min_samples_leaf=20, max_features="sqrt",
                                                   max_samples=0.5, n_jobs=N_JOBS, random_state=SEED)),
-    "extra_trees": ("Tree ensemble (randomized)", dict(n_estimators=150, min_samples_leaf=20, max_features="sqrt",
-                                                       max_samples=0.5, bootstrap=True, n_jobs=N_JOBS, random_state=SEED)),
-    "knn": ("Instance-based (GPU, MPS)", dict(n_neighbors=25, weights="distance", train_rows=KNN_TRAIN_ROWS)),
-    "gaussian_nb": ("Linear/probabilistic", dict(var_smoothing=1e-9)),
 }
 
 
 def make(name):
     fam, cfg = CONFIGS[name]
-    if name == "random_forest":   # constant fill keeps "undefined heading" distinguishable from real values
-        return make_pipeline(SimpleImputer(strategy="constant", fill_value=-999.0), RandomForestClassifier(**cfg))
-    if name == "extra_trees":
-        return make_pipeline(SimpleImputer(strategy="constant", fill_value=-999.0), ExtraTreesClassifier(**cfg))
-    if name == "knn":
-        return make_pipeline(SimpleImputer(strategy="median"), StandardScaler(), TorchKNN(n_neighbors=cfg["n_neighbors"]))
-    return make_pipeline(SimpleImputer(strategy="median"), GaussianNB(**cfg))
+    # constant fill keeps "undefined heading" distinguishable from real values
+    return make_pipeline(SimpleImputer(strategy="constant", fill_value=-999.0), RandomForestClassifier(**cfg))
 
 
 def subsample_idx(name, idx, rng):
