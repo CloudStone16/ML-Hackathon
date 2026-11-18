@@ -19,8 +19,8 @@ This repository contains the implementation, experimental results, Bayesian hype
 | **Route Continuity** | 95.30% (`0.9530`) | 95.43% (`0.9543`) | **96.28% (`0.9628`)** | **97.43% (`0.9743`)** |
 | **Sequence-Level Route F1** | — | 90.62% (`0.9062`) | **91.11% (`0.9111`)** | **91.95% (`0.9195`)** |
 | **Log Loss** | 0.0943 | 0.0888 | **0.0684** | — |
-| **Candidate Miss Rate ($K=5$)** | 0.0142 | 0.0141 | **0.0141** | **0.0141** |
-| **Inference Time (10 Test Trips)** | — | 0.1821 s | **0.2229 s** | **0.2910 s** |
+| **Candidate Miss Rate ($K=5$)** | — | 0.0141 | **0.0141** | **0.0141** |
+| **Inference Time (10 Test Trips)** | — | 0.1821 s | **0.2229 s** | — |
 
 ---
 

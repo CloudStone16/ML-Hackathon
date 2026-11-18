@@ -11,14 +11,14 @@ This document contains all measured results, tables, plots, and compulsory answe
 | **Classification Accuracy** | — | **97.35%** (`0.9735`) | **97.65%** (`0.9765`) | — |
 | **Macro F1-Score** | **95.53%** (`0.9553 ± 0.0142`) | **95.76%** (`0.9576`) | **96.25%** (`0.9625`) | — |
 | **Observation-Level Top-1 Accuracy** | **90.41%** (`0.9041`) | **92.71%** (`0.9271`) | **93.29%** (`0.9329`) | **94.27%** (`0.9427`) |
-| **Mean Per-Trip Top-1 Accuracy** | — | 92.95% (`0.9295`) | **93.52%** (`0.9352`) | **94.22%** (`0.9422`) |
+| **Mean Per-Trip Top-1 Accuracy** | — | — | **93.52%** (`0.9352`) | **94.22%** (`0.9422`) |
 | **Precision (Macro)** | 95.69% (`0.9569`) | 96.45% (`0.9645`) | **96.72%** (`0.9672`) | — |
 | **Recall (Macro)** | 95.39% (`0.9539`) | 95.10% (`0.9510`) | **95.79%** (`0.9579`) | — |
 | **Log Loss** | 0.0943 | 0.0888 | **0.0684** | — |
 | **Route Continuity** | 95.30% (`0.9530`) | 95.43% (`0.9543`) | **96.28%** (`0.9628`) | **97.43%** (`0.9743`) |
-| **Sequence-Level Route F1** | — | 90.62% (`0.9062`) | **91.11%** (`0.9111`) | **91.95%** (`0.9195`) |
-| **Candidate Miss Rate ($K=5$)** | 0.0142 (median) | 0.0141 | **0.0141** | **0.0141** |
-| **Inference Time (all 10 Test Trips)** | — | 0.1821 s | **0.2229 s** | **0.2910 s** |
+| **Sequence-Level Route F1** | — | — | **91.11%** (`0.9111`) | **91.95%** (`0.9195`) |
+| **Candidate Miss Rate ($K=5$)** | — | 0.0141 | **0.0141** | **0.0141** |
+| **Inference Time (all 10 Test Trips)** | — | 0.1821 s | **0.2229 s** | — |
 
 ---
 
@@ -97,8 +97,10 @@ We extract **24 continuous features** per `(GPS point t, candidate arc k)` pair:
 ## 4. Bayesian Hyperparameter Optimisation (Section 4)
 
 - **Search Space**: `hidden_dim` $\in \{64, 96, 128, 160\}$, `head_dim` $\in \{32, 48, 64\}$, `dropout` $\in [0.05, 0.28]$, `lr` $\in [1.2\times 10^{-3}, 4.2\times 10^{-3}]$, `listwise_weight` $\in [0.30, 0.65]$, `pos_weight` $\in [1.20, 2.00]$.
+
+> **Note on tuning:** the 10-trial GP-EI Bayesian search (`results/bayesian_optimisation_trials.csv`) was run on the first version of the features. Its best trial was `hidden=128, head=64, dropout=0.0963, lr=0.00399, lw=0.3063, pw=1.94`. The final model uses the same architecture size with hand-set values (`dropout=0.10, lr=0.0032, lw=0.40, pw=1.55`) after the features were upgraded; the search was not re-run on the final features. CV scores for the tuned model are therefore not reported.
 - **Objective**: Group-aware CV composite objective $\mathcal{J} = 0.85 \times \text{CV Macro F1} + 0.15 \times \text{CV Top-1 Accuracy}$ optimized over **10 trials** using a **Gaussian Process (`Matern(nu=2.5)`) Expected Improvement** surrogate.
-- **Best Hyperparameters Found**: `hidden_dim = 128, head_dim = 64, dropout = 0.10, lr = 0.0032, listwise_weight = 0.40, pos_weight = 1.55`.
+- **Best Hyperparameters Found (first-feature-set search)**: `hidden_dim = 128, head_dim = 64, dropout = 0.0963, lr = 0.00399, listwise_weight = 0.3063, pos_weight = 1.94`. Final model hyperparameters were set by hand (see note above).
 - **Improvement**: Boosted Student-Test Binary Accuracy from **`97.35% -> 97.65%`**, Macro F1 from **`0.9576 -> 0.9625`**, Top-1 Accuracy from **`92.71% -> 93.29%`**, Route Continuity from **`95.43% -> 96.28%`**, and reduced Log Loss from **`0.0888 -> 0.0684`**.
 
 ---
