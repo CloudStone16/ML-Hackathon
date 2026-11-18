@@ -1,0 +1,9 @@
+# Ignore raw dataset, large caches & binary model weights
+Student folder/
+results/cache/
+saved_models/
+__pycache__/
+*.pyc
+.venv/
+_teammate_repo/
+*.pdf
