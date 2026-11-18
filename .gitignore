@@ -1,0 +1,7 @@
+docs/
+.DS_Store
+.venv/
+__pycache__/
+*.pyc
+artifacts/*.parquet
+results/knn_model.joblib
