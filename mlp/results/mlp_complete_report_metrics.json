@@ -1,0 +1,145 @@
+{
+  "model_name": "PathSnap Deep MLP (Context-Aware Residual Neural Network)",
+  "algorithm_family": "Neural Networks (Deep Multi-Layer Perceptron)",
+  "feature_names": [
+    "perp_dist_m",
+    "gaussian_spatial_ll",
+    "proj_fraction",
+    "interior_margin",
+    "dist_to_start_m",
+    "dist_to_end_m",
+    "segment_length_m",
+    "cos_heading_inst",
+    "sin_heading_inst",
+    "cos_heading_smooth5",
+    "cos_heading_disp20m",
+    "dist_prev_step_m",
+    "dist_next_step_m",
+    "dist_window5_mean_m",
+    "proj_progress_3step",
+    "rel_dist_diff_best_m",
+    "rel_dist_ratio_best",
+    "cand_geom_softmax_prob",
+    "cand_rank_norm",
+    "conn_from_prev_top1",
+    "conn_to_next_top1",
+    "fb_chain_rel_cost",
+    "fb_chain_softmax_prob",
+    "gps_speed_mps"
+  ],
+  "untuned_hyperparameters": {
+    "hidden_dim": 96,
+    "head_dim": 48,
+    "dropout": 0.15,
+    "lr": 0.0025,
+    "listwise_weight": 0.45,
+    "pos_weight": 1.6
+  },
+  "best_hyperparameters": {
+    "hidden_dim": 128,
+    "head_dim": 64,
+    "dropout": 0.1,
+    "lr": 0.0032,
+    "listwise_weight": 0.4,
+    "pos_weight": 1.55
+  },
+  "best_bayesian_hyperparameters": {
+    "hidden_dim": 128,
+    "head_dim": 64,
+    "dropout": 0.1,
+    "lr": 0.0032,
+    "listwise_weight": 0.4,
+    "pos_weight": 1.55
+  },
+  "decision_threshold": 0.5700000000000001,
+  "cv_5fold_mean_macro_f1": 0.9553,
+  "cv_5fold_std_macro_f1": 0.0141,
+  "train_subset_metrics": {
+    "accuracy": 0.9746451921543613,
+    "precision_macro": 0.9623318674993113,
+    "recall_macro": 0.9569298379136164,
+    "f1_macro": 0.9596010180892374,
+    "f1_positive": 0.9349480402585714,
+    "log_loss": 0.07461569458246231,
+    "top1_accuracy": 0.9244139690639451,
+    "candidate_miss_rate": 0.018039387657470898,
+    "route_continuity": 0.9520897679780104,
+    "confusion_matrix": [
+      [
+        198776,
+        2801
+      ],
+      [
+        3559,
+        45704
+      ]
+    ]
+  },
+  "untuned_student_test_metrics": {
+    "accuracy": 0.9735281837160752,
+    "precision_macro": 0.964526881804753,
+    "recall_macro": 0.9510032090867585,
+    "f1_macro": 0.9575784773287357,
+    "f1_positive": 0.9315667332289924,
+    "log_loss": 0.08877762407064438,
+    "top1_accuracy": 0.9270876826722338,
+    "candidate_miss_rate": 0.014144050104384133,
+    "route_continuity": 0.9543226890912659,
+    "confusion_matrix": [
+      [
+        76003,
+        908
+      ],
+      [
+        1628,
+        17261
+      ]
+    ]
+  },
+  "tuned_student_test_metrics": {
+    "accuracy": 0.9764613778705636,
+    "precision_macro": 0.9671607233976547,
+    "recall_macro": 0.957922195918276,
+    "f1_macro": 0.9624550009141493,
+    "f1_positive": 0.9395231582052727,
+    "log_loss": 0.06838712096214294,
+    "top1_accuracy": 0.9328810020876827,
+    "candidate_miss_rate": 0.014144050104384133,
+    "route_continuity": 0.962808905192029,
+    "confusion_matrix": [
+      [
+        76029,
+        882
+      ],
+      [
+        1373,
+        17516
+      ]
+    ]
+  },
+  "hmm_viterbi_summary": [
+    {
+      "Stage": "PathSnap Deep MLP (Classifier-Only)",
+      "Pointwise Top-1 Accuracy": 0.9329,
+      "Mean Trip Top-1 Accuracy": 0.9352,
+      "Route Continuity": 0.9628,
+      "Sequence-Level Route F1": 0.9111
+    },
+    {
+      "Stage": "PathSnap Deep MLP + HMM/Viterbi Decoder",
+      "Pointwise Top-1 Accuracy": 0.9427,
+      "Mean Trip Top-1 Accuracy": 0.9422,
+      "Route Continuity": 0.9743,
+      "Sequence-Level Route F1": 0.9195
+    }
+  ],
+  "hmm_viterbi_config": {
+    "emission_weight": 1.0,
+    "same_arc_bonus": 0.0,
+    "connected_cost": -0.35,
+    "two_hop_cost": -1.6,
+    "disconnected_cost": -4.8,
+    "reverse_arc_cost": -6.5,
+    "gap_relax_rate": 0.3
+  }
+}
