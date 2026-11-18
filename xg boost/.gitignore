@@ -1,0 +1,7 @@
+data/
+catboost_info/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.jupyter_local/
+results/*oof*.csv.gz

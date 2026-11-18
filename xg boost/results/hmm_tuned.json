@@ -1,0 +1,103 @@
+{
+  "probs": "tuned",
+  "maxhops": 4,
+  "train_default": {
+    "classifier": {
+      "top1_acc": 0.8541853336477246,
+      "route_continuity": 0.897447343857798,
+      "route_f1": 0.825717370491754,
+      "route_precision": 0.7915067348377628,
+      "route_recall": 0.881885818939683,
+      "arc_changes": 24641,
+      "n_points": 84820,
+      "n_trips": 39
+    },
+    "hmm": {
+      "top1_acc": 0.9236265031832115,
+      "route_continuity": 0.992222063650635,
+      "route_f1": 0.9013402296270013,
+      "route_precision": 0.9130148977752673,
+      "route_recall": 0.8970113604465285,
+      "arc_changes": 14014,
+      "n_points": 84820,
+      "n_trips": 39
+    },
+    "params": {
+      "alpha": 1.0,
+      "lam": 1.0,
+      "disc": 10.0,
+      "uturn": 6.0,
+      "gap_s": 10.0
+    }
+  },
+  "tuning": {
+    "objective": "maximise observation-level top-1 on train out-of-fold probabilities (every 2nd train trip)",
+    "n_trials": 40,
+    "best_params": {
+      "alpha": 0.3412416994656169,
+      "lam": 4.241121490559916,
+      "disc": 37.71551696352297,
+      "uturn": 19.035264499280967,
+      "gap_s": 7.653457711310669
+    },
+    "best_value": 0.9344494223060599
+  },
+  "train_tuned": {
+    "classifier": {
+      "top1_acc": 0.8416512059369202,
+      "route_continuity": 0.8874308013431346,
+      "route_f1": 0.8258823708924712,
+      "route_precision": 0.792956984231214,
+      "route_recall": 0.8796502509911528,
+      "arc_changes": 55095,
+      "n_points": 183260,
+      "n_trips": 78
+    },
+    "hmm": {
+      "top1_acc": 0.9253737858779876,
+      "route_continuity": 0.9948618293205098,
+      "route_f1": 0.9594342867502703,
+      "route_precision": 0.9647269973885699,
+      "route_recall": 0.9557028701003722,
+      "arc_changes": 30361,
+      "n_points": 183260,
+      "n_trips": 78
+    }
+  },
+  "student_test": {
+    "classifier": {
+      "top1_acc": 0.8524530271398747,
+      "route_continuity": 0.9001943119590179,
+      "route_f1": 0.8492449692536399,
+      "route_precision": 0.8229335272683163,
+      "route_recall": 0.8848887951946593,
+      "arc_changes": 5661,
+      "n_points": 19160,
+      "n_trips": 10
+    },
+    "hmm": {
+      "top1_acc": 0.9337160751565762,
+      "route_continuity": 0.997953216374269,
+      "route_f1": 0.9641879305022203,
+      "route_precision": 0.9692641786150122,
+      "route_recall": 0.9601439291459248,
+      "arc_changes": 3420,
+      "n_points": 19160,
+      "n_trips": 10
+    },
+    "params": {
+      "alpha": 0.3412416994656169,
+      "lam": 4.241121490559916,
+      "disc": 37.71551696352297,
+      "uturn": 19.035264499280967,
+      "gap_s": 7.653457711310669
+    }
+  },
+  "params": {
+    "alpha": 0.3412416994656169,
+    "lam": 4.241121490559916,
+    "disc": 37.71551696352297,
+    "uturn": 19.035264499280967,
+    "gap_s": 7.653457711310669
+  }
+}
