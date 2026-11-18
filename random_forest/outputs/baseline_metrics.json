@@ -1,0 +1,34 @@
+{
+  "model_name": "Random Forest (Baseline)",
+  "algorithm_family": "Ensemble (Bagging)",
+  "key_configuration": {
+    "n_estimators": 150,
+    "max_depth": 15,
+    "min_samples_split": 5,
+    "min_samples_leaf": 2,
+    "max_features": "sqrt",
+    "class_weight": "balanced"
+  },
+  "cv_top1_accuracy": 0.8563,
+  "cv_macro_f1": 0.874,
+  "cv_log_loss": 0.2209,
+  "test_top1_accuracy": 0.6152,
+  "test_macro_f1": 0.816,
+  "test_precision": 0.7846,
+  "test_recall": 0.8775,
+  "test_log_loss": 0.3429,
+  "candidate_miss_rate": 20.2122,
+  "training_time_sec": 104.55,
+  "inference_time_sec": 0.4471,
+  "feature_importances": {
+    "perp_dist": 0.0771,
+    "heading_diff": 0.2805,
+    "seg_len": 0.033,
+    "proj_t": 0.123,
+    "dist_rank": 0.323,
+    "veh_spd": 0.049,
+    "spd_change": 0.0098,
+    "n_candidates": 0.0217,
+    "perp_dist_norm": 0.0829
+  }
+}

@@ -5,3 +5,16 @@ __pycache__/
 *.pyc
 artifacts/*.parquet
 results/knn_model.joblib
+
+# Raw data, archives and local temp folders
+/Student folder/
+/Student folder.zip
+/PathSnap_student_materials/
+/PathSnap_student_materials.zip
+/extracted_docs/
+/post_training_phase_backup/
+/data/
+/models/
+/outputs/
+
+
